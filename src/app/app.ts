@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from './layout/header/header';
+import { Sidebar } from './layout/sidebar/sidebar';
+import { Dashboard } from './features/dashboard/dashboard';
+import { Footer } from './layout/footer/footer'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header, Sidebar,Dashboard,Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected title = 'enterprise-employee-management';
+  protected title = 'Enterprise Employee Management';
 }
