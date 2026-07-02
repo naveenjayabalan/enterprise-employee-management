@@ -25,3 +25,5 @@ HTML selector did not match component selector.
 Solution
 
 Update HTML.
+
+If the @Output() event name and the event binding name don't match, the parent won't receive the event.

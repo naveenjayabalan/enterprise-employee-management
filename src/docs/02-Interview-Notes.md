@@ -32,4 +32,12 @@ Q: Is @Input() one-way or two-way communication?
 
 ✅ Correct Answer:
 
-"@Input() provides one-way data binding from the parent component to the child component."
+@Input() provides one-way data binding from the parent component to the child component.
+
+Parent → Child  = @Input()
+
+Child → Parent  = @Output()
+
+What is @Input()?
+What is @Output()?
+Difference between property binding [ ] and event binding ( ).
