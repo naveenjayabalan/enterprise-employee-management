@@ -1,5 +1,77 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Welcome back! Here's your employee management overview.</p>
+    </div>
 
-<input [(ngModel)]="username">
+    <div class="dashboard-grid">
+        <div class="dashboard-card card-primary">
+            <div class="card-icon">👥</div>
+            <h5 class="card-title">Total Employees</h5>
+            <div class="card-value">1,234</div>
+            <p class="card-subtitle">+12 this month</p>
+        </div>
+        <div class="dashboard-card card-success">
+            <div class="card-icon">✓</div>
+            <h5 class="card-title">Present Today</h5>
+            <div class="card-value">1,156</div>
+            <p class="card-subtitle">93.7% attendance</p>
+        </div>
+        <div class="dashboard-card card-warning">
+            <div class="card-icon">⏱</div>
+            <h5 class="card-title">On Leave</h5>
+            <div class="card-value">45</div>
+            <p class="card-subtitle">Approved leaves</p>
+        </div>
+        <div class="dashboard-card card-danger">
+            <div class="card-icon">⚠</div>
+            <h5 class="card-title">Pending Actions</h5>
+            <div class="card-value">8</div>
+            <p class="card-subtitle">Requires attention</p>
+        </div>
+    </div>
 
-<!-- <p>{{ username }}</p> -->
+    <div class="dashboard-table">
+        <table class="table table-hover table-striped mb-0">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#EMP001</td>
+                    <td>John Doe</td>
+                    <td>Engineering</td>
+                    <td>Senior Developer</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                    <td>#EMP002</td>
+                    <td>Jane Smith</td>
+                    <td>HR</td>
+                    <td>HR Manager</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                </tr>
+                <tr>
+                    <td>#EMP003</td>
+                    <td>Mike Johnson</td>
+                    <td>Sales</td>
+                    <td>Sales Executive</td>
+                    <td><span class="badge bg-warning text-dark">On Leave</span></td>
+                </tr>
+                <tr>
+                    <td>#EMP004</td>
+                    <td>Sarah Williams</td>
+                    <td>Finance</td>
+                    <td>Accountant</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -130,3 +130,6 @@ App
     ├── Reports
     └── Settings
 
+Q:Where should the employee data come from initially?
+
+I would create an EmployeeService because business logic and data access should be separated from the UI. The component's responsibility is to display data and handle user interactions, while the service is responsible for fetching, processing, and managing the data.

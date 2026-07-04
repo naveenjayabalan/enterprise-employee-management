@@ -1,0 +1,62 @@
+$primary-color: #2c3e50;
+$accent-color: #3498db;
+$light-bg: #ecf0f1;
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 5%) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+
+    h1 {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+/* Header Navigation/Actions */
+.header-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Logout Button */
+.btn-logout {
+  background-color: $accent-color;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($accent-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
