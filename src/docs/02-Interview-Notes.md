@@ -82,3 +82,51 @@ Q: Why do we need FormsModule to use ngModel?
 
 FormsModule provides Angular's template-driven forms features, including the ngModel directive. Without importing FormsModule, Angular cannot recognize ngModel.
 
+Q: Difference between {{}} and [title]
+
+Interpolation displays data from the component to the HTML template. It is mainly used for displaying text.
+
+Property Binding binds a component property to an HTML element property or to a child component's @Input() property.
+
+Q: Why do we need FormsModule?
+
+FormsModule provides Angular's Template-Driven Forms features, including the ngModel directive. Without FormsModule, Angular doesn't recognize ngModel.
+
+Q:Why do we use track in @for (or trackBy in *ngFor)?
+
+track helps Angular uniquely identify each item in a collection. This allows Angular to reuse existing DOM elements instead of recreating them, improving rendering performance.
+
+Q: Why do we use @if instead of hidden?
+
+@if creates or removes elements from the DOM based on the condition. This improves performance because Angular doesn't create unnecessary DOM elements. In contrast, hidden only hides the element using CSS, but the element still exists in the DOM.
+
+Q: Why is track mandatory in Angular's @for?
+
+Angular requires track so it can uniquely identify items in a collection. This allows it to reuse existing DOM elements instead of recreating them, improving rendering performance, especially for large lists.
+
+Q: How do you handle an empty list in Angular?
+
+I first check whether the collection contains data. If it does, I render the list using @for (or *ngFor in older Angular versions). Otherwise, I display an empty-state message such as 'No Employees Found'.
+
+Q: Suppose your EmployeeTable has 1000 rows.
+
+"I would create a separate EmployeeRowComponent because it improves maintainability, reusability, readability, and testing. If the row becomes more complex in the future, I can modify only that component without affecting the entire table.
+
+Q: What do you think the purpose of app.routes.ts is?
+
+app.routes.ts is the Angular routing configuration file. It maps URL paths to components. When the user navigates to a specific URL, Angular Router checks this configuration and loads the corresponding component into the router-outlet.
+
+App
+│
+├── Layout
+│   ├── Header
+│   ├── Sidebar
+│   ├── Router Outlet
+│   └── Footer
+│
+└── Features
+    ├── Dashboard
+    ├── Employees
+    ├── Reports
+    └── Settings
+
