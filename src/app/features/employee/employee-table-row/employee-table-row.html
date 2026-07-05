@@ -1,22 +1,22 @@
-    @if (employees.length > 0) {
+@if (employees.length > 0) {
 
-    @for (employee of employees; track employee.id) {
+@for (employee of employees; track employee.id) {
 
-        <tr>
-                    <td>{{ employee.id }}</td>
-                    <td>{{ employee.name }}</td>
-                    <td>{{ employee.department }}</td>
-                    <td>{{ employee.salary }}</td>
-                     <td>
-                        <button class="btn-success">Edit</button>
-                        <button class="btn-danger">Delete</button>
-                    </td>
-                </tr>
+    <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.salary }}</td>
+        <td>
+            <button class="btn-success">Edit</button>
+            <button class="btn-danger">Delete</button>
+        </td>
+    </tr>
 
-    }
+}
 
 } @else {
 
-    <tr><td colspan="5">No Employees Found.</td></tr>
+<tr><td colspan="5">No Employees Found.</td></tr>
 
 }
