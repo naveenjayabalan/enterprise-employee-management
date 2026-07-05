@@ -2,6 +2,11 @@ $accent-color: #3498db;
 $success-color: #27ae60;
 $danger-color: #e74c3c;
 
+/* Host Element - Make component invisible in layout */
+:host {
+  display: contents;
+}
+
 /* Table Row and Button Styling */
 :host ::ng-deep {
   tr {
