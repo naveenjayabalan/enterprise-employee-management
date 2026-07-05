@@ -133,3 +133,23 @@ App
 Q:Where should the employee data come from initially?
 
 I would create an EmployeeService because business logic and data access should be separated from the UI. The component's responsibility is to display data and handle user interactions, while the service is responsible for fetching, processing, and managing the data.
+
+Q: What is Dependency Injection?
+
+Dependency Injection is a design pattern in which components or services are provided with their dependencies instead of creating or locating them internally. In Angular, the Dependency Injection system manages the dependencies between various parts of an application, providing loose coupling and modular development.
+
+Q: Why do we use @Injectable()?
+
+@Injectable() marks a class as a service that can participate in Angular's Dependency Injection system. It allows Angular to create and inject the service and also inject dependencies into the service itself.
+
+Q: Why don't you call APIs inside the constructor?
+
+The constructor is used for dependency injection and object creation. Business logic such as API calls and data initialization should be placed in ngOnInit() because Angular calls it after the component has been fully initialized.
+
+Q: What is Change Detection?
+
+Change Detection is Angular's mechanism that detects changes in component data and automatically updates the view. It keeps the UI synchronized with the application state without requiring manual DOM manipulation.
+
+Q: When would you use ngOnChanges()?
+
+I use ngOnChanges() when I need to respond to changes in values received through @Input() from the parent component. Angular calls it whenever an input property changes.
