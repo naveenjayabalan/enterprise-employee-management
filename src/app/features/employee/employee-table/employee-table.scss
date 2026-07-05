@@ -1,0 +1,46 @@
+$light-bg: #ecf0f1;
+$shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+/* Employee Table Styling */
+:host ::ng-deep .dashboard-table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  overflow: hidden;
+  border: 1px solid #ecf0f1;
+
+  table {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  thead {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #ecf0f1;
+
+    th {
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #ecf0f1;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #f8f9fa;
+      }
+
+      td {
+        padding: 1rem 1.5rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
