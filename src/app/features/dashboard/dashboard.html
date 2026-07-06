@@ -27,8 +27,14 @@
     </div>
 
     <div class="dashboard-table">
-        <app-employee-table [employees]="employees"></app-employee-table>
+        <app-employee-table [employees]="employees"
+        (editEmployee)="onEditEmployee($event)"
+         (deleteEmployee)="onDeleteEmployee($event)"></app-employee-table>
     </div>
 
+    <div class="employee-form">
+        <app-employee-form 
+        [employee]="selectedEmployee"></app-employee-form>
+    </div>
    
 </div>

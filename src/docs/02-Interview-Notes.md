@@ -153,3 +153,7 @@ Change Detection is Angular's mechanism that detects changes in component data a
 Q: When would you use ngOnChanges()?
 
 I use ngOnChanges() when I need to respond to changes in values received through @Input() from the parent component. Angular calls it whenever an input property changes.
+
+Q: What is the difference between setValue() and patchValue()?
+
+setValue() requires values for every form control and throws an error if the structure doesn't match. patchValue() updates only the matching controls, making it useful when working with partial objects or objects that contain additional properties.

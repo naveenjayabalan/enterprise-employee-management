@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Employee } from '../../../models/employee'
 
@@ -10,5 +10,22 @@ import { Employee } from '../../../models/employee'
 })
 export class EmployeeTableRow {
 
-  @Input() employees: Employee[] = [];
+  @Input() 
+  employee!: Employee;
+
+  @Output()
+  deleteEmployee = new EventEmitter<number>();
+  @Output()
+  editEmployee = new EventEmitter<number>();
+
+onEdit(): void {
+   console.log('Row Edit');
+  this.editEmployee.emit(this.employee.id);
+}
+
+  onDelete(): void {
+   console.log('Row Component');
+    this.deleteEmployee.emit(this.employee.id);
+  }
+
 }

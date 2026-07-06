@@ -9,9 +9,27 @@
                     
                 </tr>
             </thead>
-            <tbody>
-            
-                <app-employee-table-row [employees]="employees"></app-employee-table-row>
-                
-            </tbody>
+           <tbody>
+
+@if (employees.length > 0) {
+
+    @for (employee of employees; track employee.id) {
+
+        <app-employee-table-row
+            [employee]="employee"
+            (editEmployee)="onEditEmployee($event)"
+            (deleteEmployee)="onDeleteEmployee($event)">
+        </app-employee-table-row>
+
+    }
+
+} @else {
+
+    <tr>
+        <td colspan="5">No Employees Found.</td>
+    </tr>
+
+}
+
+</tbody>
         </table>

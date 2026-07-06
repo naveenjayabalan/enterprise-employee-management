@@ -1,0 +1,16 @@
+<form [formGroup]="employeeForm">
+
+    <input
+        type="text"
+        formControlName="name">
+
+    <input
+        type="text"
+        formControlName="department">
+
+    <input
+        type="number"
+        formControlName="salary">
+
+        <button (click)="onSave()"></button>
+</form>
