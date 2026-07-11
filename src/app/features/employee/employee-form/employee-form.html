@@ -3,14 +3,61 @@
     <input
         type="text"
         formControlName="name">
+        @if (employeeForm.get('name')?.touched &&
+             employeeForm.get('name')?.invalid) {
+          @if (employeeForm.get('name')?.errors?.['required']) {
+            <small>
+              Name is required.
+            </small>
+          }
+
+          @if (employeeForm.get('name')?.errors?.['minlength']) {
+            <small>
+              Minimum 3 characters required.
+            </small>
+          }
+        }
 
     <input
         type="text"
         formControlName="department">
+        @if (employeeForm.get('department')?.touched &&
+     employeeForm.get('department')?.invalid) {
+
+    @if (employeeForm.get('department')?.errors?.['required']) {
+
+        <small>
+            Department is required.
+        </small>
+
+    }
+
+}
 
     <input
         type="number"
         formControlName="salary">
 
-        <button (click)="onSave()"></button>
+        @if (employeeForm.get('salary')?.touched &&
+     employeeForm.get('salary')?.invalid) {
+
+    @if (employeeForm.get('salary')?.errors?.['required']) {
+
+        <small>
+            Salary is required.
+        </small>
+
+    }
+
+    @if (employeeForm.get('salary')?.errors?.['min']) {
+
+        <small>
+            Salary must be at least 10000.
+        </small>
+
+    }
+
+}
+
+        <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid" (click)="onSave()">Save</button>
 </form>

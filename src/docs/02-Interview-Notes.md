@@ -157,3 +157,19 @@ I use ngOnChanges() when I need to respond to changes in values received through
 Q: What is the difference between setValue() and patchValue()?
 
 setValue() requires values for every form control and throws an error if the structure doesn't match. patchValue() updates only the matching controls, making it useful when working with partial objects or objects that contain additional properties.
+
+Q: Why shouldn't CRUD logic be inside a component?
+
+Components should be responsible for presentation and user interaction. Business logic belongs in services so it can be reused, tested independently, and maintained more easily.
+
+Q: Why do we make employees private in a service?
+
+We make employees private to achieve encapsulation. It prevents other components or classes from directly modifying the array. All changes should happen through service methods like addEmployee(), updateEmployee(), and deleteEmployee(). This keeps the data consistent and allows us to control how it is modified.
+
+Q: Why doesn't the component need to call getEmployees() again after deleting an employee?
+
+Because getEmployees() currently returns the same array reference. Both the service and the component reference the same array. When the service modifies it using splice(), Angular's change detection reflects the changes in the UI.
+
+Q: Why don't you use array.length + 1 to generate IDs?
+
+Because records can be deleted. The array length doesn't represent the highest ID. Using length + 1 may generate duplicate IDs. Instead, I determine the maximum existing ID and increment it.

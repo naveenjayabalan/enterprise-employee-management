@@ -34,7 +34,8 @@
 
     <div class="employee-form">
         <app-employee-form 
-        [employee]="selectedEmployee"></app-employee-form>
+        [employee]="selectedEmployee"
+        (saveEmployee)="onSaveEmployee($event)"></app-employee-form>
     </div>
    
 </div>

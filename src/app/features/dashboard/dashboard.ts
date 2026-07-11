@@ -24,26 +24,30 @@ ngOnInit(): void {
 }
 
 onDeleteEmployee(id: number): void {
-  console.log("Row ID number"+  id);
-  const index = this.employees.findIndex(emp => emp.id === id);
-  if (index > -1) {
-    this.employees.splice(index, 1);
-    console.log(`Employee with ID ${id} deleted successfully`);
-  }
+ this.employeeService.deleteEmployee(id);
 }
 
-selectedEmployee!: Employee;
+selectedEmployee: Employee | undefined;
 
 onEditEmployee(id: number): void {
+  const employee = this.employees.find(emp => emp.id === id);
+  if (employee) {
+    this.selectedEmployee = { ...employee };
+  }
 
-    const employee =
-        this.employees.find(emp => emp.id === id);
+}
 
-    if (employee) {
-        this.selectedEmployee = { ...employee };
-        console.log(this.selectedEmployee);
-    }
+onSaveEmployee(employee: Employee): void {
 
+   const index = this.employees.findIndex(
+        emp => emp.id === employee.id
+    );
+  if (index !== -1) {
+    this.employeeService.addEmployee(employee);
+  } else {
+    this.employeeService.updateEmployee(employee);
+  }
+   this.selectedEmployee = undefined; 
 }
 
 }

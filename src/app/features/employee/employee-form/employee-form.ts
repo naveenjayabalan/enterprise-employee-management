@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Employee } from '../../../models/employee'
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-form',
@@ -11,8 +11,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 export class EmployeeForm implements OnInit, OnChanges {
 
 
-@Input()
-employee!: Employee;
+@Input() employee: Employee | undefined;
 
   employeeForm!: FormGroup;
 
@@ -20,9 +19,9 @@ employee!: Employee;
 
   ngOnInit(): void {
     this.employeeForm = this.fb.group({
-      name: [''],
-      department: [''],
-      salary: [0]
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      department: ['',Validators.required],
+      salary: [10000,  [Validators.required,Validators.min(10000)]]
     });
   }
 
@@ -37,6 +36,7 @@ employee!: Employee;
 
 onSave(): void {
     if (this.employeeForm.valid) {
+       this.employeeForm.markAllAsTouched();
       const formData = this.employeeForm.getRawValue();
       const employeeData: Employee = {
         id: this.employee?.id || 0,
@@ -49,5 +49,7 @@ onSave(): void {
     } else {
       console.log('Form is invalid');
     }
+    this.employeeForm.reset();
+
 }
 }
